@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio
+      id="minhamusica"
+      src="sounds/Charlie Brown Jr - Proibida Pra Mim.mp3"
+    ></audio>
+
+    <div id="controles">
+      <input
+        type="range"
+        id="volumeSlider"
+        min="0"
+        max="1"
+        step="0.1"
+        value="1"
+      />
+      <label class="container">
+        <input class="btc" type="checkbox" checked="checked" />
+        <svg
+          class="play"
+          xmlns="http://www.w3.org/2000/svg"
+          height="1em"
+          viewBox="0 0 384 512"
+        >
+          <path
+            d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
+          ></path>
+        </svg>
+        <svg
+          class="pause"
+          xmlns="http://www.w3.org/2000/svg"
+          height="1em"
+          viewBox="0 0 320 512"
+        >
+          <path
+            d="M48 64C21.5 64 0 85.5 0 112V400c0 26.5 21.5 48 48 48H80c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H48zm192 0c-26.5 0-48 21.5-48 48V400c0 26.5 21.5 48 48 48h32c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48H240z"
+          ></path>
+        </svg>
+      </label>
+    </div>
+    <img src="imagens/cover-album.jpg" alt="foto do album" height="200" />
+    <h3>Charlie Brown Jr</h3>
+    <div class="caixa">
+      <h1 class="supertitulo">Proíbida Pra Mim</h1>
+      <p>
+        Ela achou o meu cabelo engraçado<br />
+        Proibida pra mim no way<br />
+        Disse que não podia ficar<br />
+        Mas levou a sério o que eu falei
+      </p>
+      <p>
+        Eu vou fazer tudo que eu puder<br />
+        Eu vou roubar essa mulher pra mim<br />
+        Posso te ligar a qualquer hora<br />
+        Mas eu nem sei o seu nome
+      </p>
+      <p>
+        Se não eu, quem vai fazer você feliz?<br />
+        Se não eu, quem vai fazer você feliz?<br />
+        Guerra
+      </p>
+      <p>
+        Eu me flagrei pensando em você<br />
+        Em tudo que eu queria te dizer<br />
+        Em uma noite especialmente boa<br />
+        Não há nada mais que a gente possa fazer
+      </p>
+      <p>
+        Vou fazer de tudo que eu puder<br />
+        Vou roubar essa mulher pra mim<br />
+        Eu posso te ligar a qualquer hora<br />
+        Mas eu nem sei o seu nome
+      </p>
+      <p>
+        Se não eu, quem vai fazer você feliz?<br />
+        Se não eu, quem vai fazer você feliz?<br />
+        Guerra
+      </p>
+      <p>
+        Eu me flagrei pensando em você<br />
+        Em tudo que eu queria te dizer<br />
+        ...
+      </p>
+    </div>
+
+    <script>
+      var musica = document.getElementById("minhamusica");
+      var volumeSlider = document.getElementById("volumeSlider");
+      var botaoPlay = document.querySelector(".play");
+      var botaoPause = document.querySelector(".pause");
+      const caixa = window.document.querySelector(".caixa");
+
+      // Controle de Volume
+      volumeSlider.oninput = function () {
+        musica.volume = volumeSlider.value;
+      };
+
+      botaoPlay.addEventListener("click", () => {
+        musica.play();
+      });
+
+      botaoPause.addEventListener("click", () => {
+        musica.pause();
+      });
+    </script>
+  </body>
+</html>
